@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            border: 1px solid black;
+            display: flex;
+            background-color: pink;
+            height: 100px;
+            margin: auto;
+        }
+        #child1{
+            background-color: red;
+            margin: 10px;
+            width: 80px;
+            border: 2px solid black;
+            
+        }
+        #child2{
+            background-color: yellow;
+            margin: 10px;
+            width: 80px;
+            border: 2px solid black;
+        }
+        #child3{
+            background-color: green;
+            margin: 10px;
+            width: 80px;
+            border: 2px solid black;
+        }
+        #child4{
+            background-color: rgb(133, 7, 133);
+            margin: 10px;
+            width: 80px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script>
+    let assg = React.createElement("div", {id:"parent"},[ "Parent",
+        React.createElement("div",{id:"child1"},"1"),
+        React.createElement("div",{id: "child2"},"2"),
+        React.createElement("div",{id: "child3"},"3"),
+        React.createElement("div",{id: "child4"},"4")
+    ])
+    let root = document.getElementById("root")
+    const ReactRoot = ReactDOM.createRoot(root)
+    ReactRoot.render(assg)
+</script>
