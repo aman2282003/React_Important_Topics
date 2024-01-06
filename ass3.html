@@ -11,6 +11,7 @@
             background-color: pink;
             height: 100px;
             margin: auto;
+            justify-content: center;
         }
         #child1{
             background-color: red;
@@ -37,6 +38,11 @@
             width: 80px;
             border: 2px solid black;
         }
+        #p{
+            position: absolute;
+            left: 15px;
+            top:-12px;
+        }
     </style>
 </head>
 <body>
@@ -46,11 +52,12 @@
 <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
 <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
 <script>
-    let assg = React.createElement("div", {id:"parent"},[ "Parent",
+    let assg = React.createElement("div", {id:"parent"},[ 
+        React.createElement("p",{id:"p"},"Parent"),
         React.createElement("div",{id:"child1"},"1"),
-        React.createElement("div",{id: "child2"},"2"),
-        React.createElement("div",{id: "child3"},"3"),
-        React.createElement("div",{id: "child4"},"4")
+        React.createElement("div",{id:"child2"},"2"),
+        React.createElement("div",{id:"child3"},"3"),
+        React.createElement("div",{id:"child4"},"4")
     ])
     let root = document.getElementById("root")
     const ReactRoot = ReactDOM.createRoot(root)
